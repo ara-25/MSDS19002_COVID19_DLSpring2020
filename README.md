@@ -1,6 +1,8 @@
 # Covid-19 classification using Chest X-Ray Dataset
 This repository contains code and results for COVID-19 classification assignment by Deep Learning Spring 2020 course offered at Information Technology University, Lahore, Pakistan. This assignment is only for learning purposes and is not intended to be used for clinical purposes.
 
+# Part 1
+
 ## Dataset
 Dataset is available [here](https://drive.google.com/file/d/1-HQQciKYfwAO3oH7ci6zhg45DduvkpnK/view).
 This dataset contains chest X-Ray images classified into *infected* and *normal* categories.
@@ -133,3 +135,60 @@ Higher accuracies were acheived when the entire network was finetuned. This can 
 fact that the original ImageNet dataset is different from the current task involving medical
 images. Fine-tuning of the convolution layers adjusted the features extracted from the network
 and showed better results.
+
+# Part 2
+Multilabel classification of x-ray images into {normal, pneumonia, covid} labels. The
+dataset is unbalanced for the covid class
+
+## Dataset
+Dataset is available [here](https://drive.google.com/open?id=1eytbwaLQBv12psV8I-aMkIli9N3bf8nO&authuser=0)
+
+## Results
+
+#### VGG-16 (Cross Entropy Loss)
+
+Subset Accuracy | Macro-averaged F1-score
+---------|---------
+0.952 | 0.899
+
+##### Train Set
+![](confusion_matrices/part2-vgg-bce-train.png)
+
+##### Validation Set
+![](confusion_matrices/part2-vgg-bce-valid.png)
+
+#### VGG-16 (Focal Loss)
+Subset Accuracy | Macro-averaged F1-score
+---------|---------
+0.952 | 0.920
+
+##### Train Set
+![](confusion_matrices/part2-vgg-focal-train.png)
+
+##### Validation Set
+![](confusion_matrices/part2-vgg-focal-valid.png)
+
+#### ResNet-18 (Cross Entropy Loss)
+Subset Accuracy | Macro-averaged F1-score
+---------|---------
+0.957 | 0.913
+
+##### Train Set
+![](confusion_matrices/part2-resnet-bce-train.png)
+
+##### Validation Set
+![](confusion_matrices/part2-resnet-bce-valid.png)
+
+#### ResNet-18 (Focal Loss)
+Subset Accuracy | Macro-averaged F1-score
+---------|---------
+ 0.935 | 0.882
+
+##### Train Set
+![](confusion_matrices/part2-resnet-focal-train.png) 
+##### Validation Set
+![](confusion_matrices/part2-resnet-focal-valid.png)  
+
+## Weights
+Weights can be found [here](weights)
+
